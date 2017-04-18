@@ -1,0 +1,29 @@
+{
+  "name": "eels_info",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    // "test": "mocha client/src/models/specs",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongodb": "^2.2.26"
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "mocha": "^3.0.2",
+    "webpack": "1.12.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robflett/mongodb_web_app_practice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robflett/mongodb_web_app_practice/issues"
+  },
+  "homepage": "https://github.com/robflett/mongodb_web_app_practice#readme",
+  "description": ""
+}
