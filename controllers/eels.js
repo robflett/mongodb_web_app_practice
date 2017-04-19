@@ -5,10 +5,10 @@ var EelsQuery = require("../db/eelsQuery");
 var eelsQuery = new EelsQuery();
 
 
-//film by id
-eelsRouter.get('/:id', function(req, res){
-  res.json(eels[req.params.id]);
-});
+// //film by id
+// eelsRouter.get('/:id', function(req, res){
+//   res.json(eels[req.params.id]);
+// });
 
 //film index- WORKS
 eelsRouter.get('/', function(req, res) {
@@ -17,7 +17,7 @@ eelsRouter.get('/', function(req, res) {
   });
 });
 
-//add new film -- WORKS
+//add new film
 eelsRouter.post('/', function(req, res) {
   var newAlbum = {
     title: req.body.title,
@@ -29,6 +29,15 @@ eelsRouter.post('/', function(req, res) {
     res.json(results);
   })
 });
+
+// DELETE
+eelsRouter.delete("/:id", function(req, res){
+  eelsQuery.delete(req.params.id), function(films){
+    
+  res.json({data: albums});
+  }
+
+})
 
 
 

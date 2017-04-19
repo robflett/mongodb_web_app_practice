@@ -1,4 +1,4 @@
-user eels_info;
+use eels_info
 
 db.albums.insert([
   
@@ -27,4 +27,4 @@ db.albums.insert([
     pick: "Fresh Feeling"
   }]
 
-);
+)

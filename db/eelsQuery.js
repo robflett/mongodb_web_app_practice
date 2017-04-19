@@ -1,4 +1,6 @@
 var MongoClient = require("mongodb").MongoClient;
+// The below creates a wrapper for the MongoDB ID.
+var ObjectID = require("mongodb").ObjectID;
 
 var EelsQuery = function(){
   this.url = "mongodb://localhost:27017/eels_info";
@@ -31,7 +33,21 @@ EelsQuery.prototype = {
         })
       }
     })
-  }
+  },
+
+
+  delete: function(id, callback){
+    MongoClient.connect(this.url, function(err, db){
+      if(db){
+        var collection = db.collection("albums");
+        collection.remove( {_id: ObjectID(id)});
+        collection.find().toArray(function(err, docs){
+          callback(docs);
+        })
+      }
+    })
+}
+
 }
 
 module.exports = EelsQuery;
